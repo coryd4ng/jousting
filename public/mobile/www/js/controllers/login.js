@@ -6,7 +6,8 @@ angular.module('app').controller('LoginCtrl', function($scope, $http, $auth, $st
       password: $scope.user.password
     }).then(function(res) {
       $state.go('gauntlet');
-      $window.localStorage.storage.setItem('userName', res.data.user.userName);
+      var storage = $window.localStorage;
+      storage.setItem('userName', res.data.user.userName);
 
       var message = 'Thanks for coming back ' + res.data.user.userName + '!';
       if (!res.data.user.active)

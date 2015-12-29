@@ -3,7 +3,8 @@ angular.module('app').controller('LogoutCtrl', function($scope, $auth, $location
   $scope.logout = function() {
     $auth.logout()
     .then(function() {
-      $window.localStorage.removeItem('userName');
+      var storage = $window.localStorage;
+      storage.removeItem('userName');
       $location.path('/');
     });
   };
