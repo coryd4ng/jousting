@@ -64,7 +64,7 @@ angular.module('app')
     views: {
       'app-nav': {
         templateUrl: 'templates/roster.html',
-        controller: 'rosterCtrl'
+        controller: 'RosterCtrl'
       }
     }
   })
@@ -106,7 +106,7 @@ angular.module('app')
     views: {
       'app-nav': {
         templateUrl: 'templates/challenges.html',
-        controller: 'challenges'
+        controller: 'ChallengesCtrl'
       }
     }
   })

@@ -1,13 +1,13 @@
 angular.module('app').controller('CreateTeamCtrl', function($scope, $http, API_URL, $state) {
- 
-  var userNode = JSON.parse(window.localStorage.userName);
-  console.log('userNode team is ', userNode.teams);
-  console.log('scope user is', userNode.userName);
+  var userName = JSON.parse(window.localStorage.userName);
+  console.log('userNode team is ', teams);
+  console.log('scope user is', userName);
   $scope.team = {teamName: '', createdBy: ''};
 
   $scope.createTeam = function() {
+     console.log($scope.team);
       $http.post(API_URL + 'createTeam', {
-          userName: userNode.userName,
+          userName: userName,
           teamName: $scope.team.teamName
       })
       .success(function() {
